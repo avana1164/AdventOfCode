@@ -20,38 +20,35 @@ for line in f:
         for i in range(9):                     
             y = coor[i][1] - coor[i + 1][1]
             x = coor[i][0] - coor[i + 1][0]
-            
             if abs(x) > 1 or abs(y) > 1:
-                if abs(x) > 1 or abs(y) > 1:
-                #     if x > 0 and y > 0:
-                #         coor[i + 1][0] += 1
-                #         coor[i + 1][1] += 1
-                #     elif x < 0 and y > 0:
-                #         coor[i + 1][0] -= 1
-                #         coor[i + 1][1] += 1
-                #     elif x > 0 and y < 0:
-                #         coor[i + 1][0] += 1
-                #         coor[i + 1][1] -= 1
-                #     elif x < 0 and y < 0:
-                #         coor[i + 1][0] -= 1
-                #         coor[i + 1][1] -= 1
-                #     elif x > 1:
-                #         coor[i + 1][0] += 1
-                #     elif x < -1:
-                #         coor[i + 1][0] -= 1
-                #     elif y > 1:
-                #         coor[i + 1][1] += 1
-                #     elif y < -1:
-                #         coor[i + 1][1] -= 1
-                if x > 1:
-                    coor[i + 1] = [coor[i + 1][0] + 1, coor[i + 1][1] + y]                  
+                if x > 0 and y > 0:
+                    coor[i + 1][0] += 1
+                    coor[i + 1][1] += 1
+                elif x < 0 and y > 0:
+                    coor[i + 1][0] -= 1
+                    coor[i + 1][1] += 1
+                elif x > 0 and y < 0:
+                    coor[i + 1][0] += 1
+                    coor[i + 1][1] -= 1
+                elif x < 0 and y < 0:
+                    coor[i + 1][0] -= 1
+                    coor[i + 1][1] -= 1
+                elif x > 1:
+                    coor[i + 1][0] += 1
                 elif x < -1:
-                    coor[i + 1] = [coor[i + 1][0] - 1, coor[i + 1][1] + y] 
+                    coor[i + 1][0] -= 1
                 elif y > 1:
-                    coor[i + 1] = [coor[i + 1][0] + x, coor[i + 1][1] + 1]  
+                    coor[i + 1][1] += 1
                 elif y < -1:
-                    coor[i + 1] = [coor[i + 1][0] + x, coor[i + 1][1] - 1]   
-            print
-            if coor[9] not in v:
-                v.append(coor[9])                                  
+                    coor[i + 1][1] -= 1
+            """if x > 1:
+                coor[i + 1] = [coor[i + 1][0] + 1, coor[i + 1][1] + y]                  
+            elif x < -1:
+                coor[i + 1] = [coor[i + 1][0] - 1, coor[i + 1][1] + y] 
+            elif y > 1:
+                coor[i + 1] = [coor[i + 1][0] + x, coor[i + 1][1] + 1]  
+            elif y < -1:
+                coor[i + 1] = [coor[i + 1][0] + x, coor[i + 1][1] - 1]"""  
+            if tuple(coor[9]) not in v:
+                v.append(tuple(coor[9]))                                  
 print(len(v))      
