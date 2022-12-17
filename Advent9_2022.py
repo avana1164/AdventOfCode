@@ -16,10 +16,33 @@ for line in f:
         elif dir == 'D':  
             coor[0][1]-=1 
 
+       
         for i in range(9):                     
             y = coor[i][1] - coor[i + 1][1]
             x = coor[i][0] - coor[i + 1][0]
+            
             if abs(x) > 1 or abs(y) > 1:
+                if abs(x) > 1 or abs(y) > 1:
+                #     if x > 0 and y > 0:
+                #         coor[i + 1][0] += 1
+                #         coor[i + 1][1] += 1
+                #     elif x < 0 and y > 0:
+                #         coor[i + 1][0] -= 1
+                #         coor[i + 1][1] += 1
+                #     elif x > 0 and y < 0:
+                #         coor[i + 1][0] += 1
+                #         coor[i + 1][1] -= 1
+                #     elif x < 0 and y < 0:
+                #         coor[i + 1][0] -= 1
+                #         coor[i + 1][1] -= 1
+                #     elif x > 1:
+                #         coor[i + 1][0] += 1
+                #     elif x < -1:
+                #         coor[i + 1][0] -= 1
+                #     elif y > 1:
+                #         coor[i + 1][1] += 1
+                #     elif y < -1:
+                #         coor[i + 1][1] -= 1
                 if x > 1:
                     coor[i + 1] = [coor[i + 1][0] + 1, coor[i + 1][1] + y]                  
                 elif x < -1:
