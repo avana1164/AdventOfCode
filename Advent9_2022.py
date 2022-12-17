@@ -40,15 +40,7 @@ for line in f:
                 elif y > 1:
                     coor[i + 1][1] += 1
                 elif y < -1:
-                    coor[i + 1][1] -= 1
-            """if x > 1:
-                coor[i + 1] = [coor[i + 1][0] + 1, coor[i + 1][1] + y]                  
-            elif x < -1:
-                coor[i + 1] = [coor[i + 1][0] - 1, coor[i + 1][1] + y] 
-            elif y > 1:
-                coor[i + 1] = [coor[i + 1][0] + x, coor[i + 1][1] + 1]  
-            elif y < -1:
-                coor[i + 1] = [coor[i + 1][0] + x, coor[i + 1][1] - 1]"""  
+                    coor[i + 1][1] -= 1 
             if tuple(coor[9]) not in v:
                 v.append(tuple(coor[9]))                                  
 print(len(v))      
