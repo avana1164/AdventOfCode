@@ -23,7 +23,7 @@ for line in f:
         monkey.append(0)
         monkeys.append(monkey)
     line_type+=1
-for k in range(20):
+for k in range(10000):
     for i in range(len(monkeys)):
         monkeys[i][7]+=len(monkeys[i][0])
         for j in monkeys[i][0]:
@@ -41,13 +41,12 @@ for k in range(20):
                 total_num = int(num1 + num2)
             elif monkeys[i][2] == '*':
                 total_num = int(num1*num2)
-            #total_num = math.floor(total_num/3)
+            total_num = total_num%9699690
             if total_num % monkeys[i][4] == 0:
                 monkeys[monkeys[i][5]][0].append(total_num)  
             else:
                 monkeys[monkeys[i][6]][0].append(total_num) 
         monkeys[i][0] = []
-print(monkeys)
 inspection = []
 for i in range(len(monkeys)):
     inspection.append(monkeys[i][7])

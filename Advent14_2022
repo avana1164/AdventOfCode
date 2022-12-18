@@ -1,0 +1,5 @@
+#let sand fall until it hits a rock or stone 
+#check bottom-left point and see if it is empty
+    #if empty continue to let fall until it hits a rock or stone
+        #repeat if possible
+#check bottom-right if bottom-left is full
