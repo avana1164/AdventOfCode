@@ -1,4 +1,3 @@
-import math
 file = open('adventfile11_2022', 'r')
 f = file.readlines()
 monkeys = []
@@ -41,7 +40,7 @@ for k in range(10000):
                 total_num = int(num1 + num2)
             elif monkeys[i][2] == '*':
                 total_num = int(num1*num2)
-            total_num = total_num%9699690
+            total_num = total_num%9699690 #multiply all the divisible by numbers together to get 9699690
             if total_num % monkeys[i][4] == 0:
                 monkeys[monkeys[i][5]][0].append(total_num)  
             else:
