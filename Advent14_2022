@@ -40,13 +40,16 @@ for line in f:
             elif num3 < num1:
                 for j in range(num1, num3 - 1, -1):
                     check_repeat([j, num2], filled)
-while curr[1] <= min_height: 
-    if (curr[0], curr[1] + 1) not in filled.keys():       
+while (500, 0) not in filled.keys():  
+    if (curr[0], curr[1] + 1) not in filled.keys() and curr[1] < min_height + 1:    
+        move = True  
         curr[1]+=1
-    elif (curr[0] - 1, curr[1] + 1) not in filled.keys():
+    elif (curr[0] - 1, curr[1] + 1) not in filled.keys() and curr[1] < min_height + 1:
+        move = True
         curr[0]-=1
         curr[1]+=1
-    elif (curr[0] + 1, curr[1] + 1) not in filled.keys():
+    elif (curr[0] + 1, curr[1] + 1) not in filled.keys() and curr[1] < min_height + 1:
+        move = True
         curr[0]+=1
         curr[1]+=1
     else:
