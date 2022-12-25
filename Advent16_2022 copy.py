@@ -39,10 +39,12 @@ for j in flow:
     compressed['AA'][0].append(j)
     compressed['AA'][1].append(v[j][0]+1)
 max_pressure = 0
-queue.put(['AA', 0, 30, flow])
+queue.put(['AA', 'AA', 0, 0, 0, 30, flow])
 while not queue.empty():
     data = queue.get()
     curr_node = data[0]
+    curr_node2 = data[1]
+    
     total = data[1]
     time = data[2]
     if len(data[3]) > 0:        
