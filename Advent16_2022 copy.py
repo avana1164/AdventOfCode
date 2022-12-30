@@ -1,7 +1,7 @@
 import copy
-import math
 from queue import Queue
 queue = Queue()
+queue2 = Queue()
 file = open('adventfile16_2022', 'r')
 f = file.readlines()
 valves = {}
@@ -39,29 +39,7 @@ for j in flow:
     compressed['AA'][0].append(j)
     compressed['AA'][1].append(v[j][0]+1)
 max_pressure = 0
-queue.put(['AA', 'AA', 0, 0, 0, 30, flow])
-while not queue.empty():
-    data = queue.get()
-    curr_node = data[0]
-    curr_node2 = data[1]
-    
-    total = data[1]
-    time = data[2]
-    if len(data[3]) > 0:        
-        for i in range(len(compressed[curr_node][0])):
-            f = copy.deepcopy(data[3])
-            neighbour = compressed[curr_node][0][i]
-            distance = compressed[curr_node][1][i] 
-            if neighbour in f.keys():
-                del f[neighbour]
-                t = time-distance 
-                if t > 0:
-                    queue.put([neighbour, total+(flow[neighbour]*t), t, f])
-                elif t == 0:
-                    total+=(flow[neighbour]*t) 
-                    max_pressure = math.max(max_pressure, total)
-                else:
-                    max_pressure = math.max(max_pressure, total)                                      
-    else:
-        max_pressure = max(max_pressure, total)
+queue.put(['AA', 0, 0, 30, flow]) #don't include both player and elephant, keep them separate
+num_players = 2
+
 print(max_pressure)
