@@ -38,7 +38,6 @@ for j in flow:
     compressed['AA'][0].append(j)
     compressed['AA'][1].append(v[j][0]+1)
 totals = []
-for 
 def max_pressure(curr_node, lost_time, time, f, to): 
     print(curr_node) 
     print(time)  
