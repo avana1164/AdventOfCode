@@ -38,14 +38,10 @@ for j in flow:
     compressed['AA'][0].append(j)
     compressed['AA'][1].append(v[j][0]+1)
 totals = []
-def max_pressure(curr_node, lost_time, time, f, to): 
-    print(curr_node) 
-    print(time)  
+def max_pressure(curr_node, time, f, to):  
     for next, dist in zip(compressed[curr_node][0], compressed[curr_node][1]):
         v = copy.deepcopy(f)
         t = time - dist 
-        if lost_time == 0:
-            max_pressure
         if t >= 0:
             if next in v.keys():
                 del v[next]                                    
@@ -60,4 +56,4 @@ def max_pressure(curr_node, lost_time, time, f, to):
         return totals
     else:
         return
-print(max(max_pressure('AA', 0, 26, flow, 0)))
+print(max(max_pressure('AA', 30, flow, 0)))
