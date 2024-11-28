@@ -1,4 +1,4 @@
-file = open('adventfile24_2018', 'r')
+file = open('d24', 'r')
 f = file.readlines()
 infections = []
 immune_system = []

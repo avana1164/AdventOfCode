@@ -1,4 +1,4 @@
-file = open('adventfile10_2022', 'r')
+file = open('d10', 'r')
 f = file.readlines()
 X = 1
 cycle = 0

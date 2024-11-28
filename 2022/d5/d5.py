@@ -1,4 +1,4 @@
-file = open('adventfile5_2022.txt', 'r')
+file = open('d5', 'r')
 f = file.readlines()
 cargo = [[], [], [], [], [], [], [], [], []]
 init_pos = 1

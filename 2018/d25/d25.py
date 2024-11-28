@@ -1,6 +1,6 @@
 from queue import Queue
 queue = Queue()
-file = open('adventfile25_2018', 'r')
+file = open('d25', 'r')
 f = file.readlines()
 coordinates = {}
 sum = 0

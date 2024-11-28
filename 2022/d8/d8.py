@@ -1,4 +1,4 @@
-file = open('adventfile8_2022', 'r')
+file = open('d8', 'r')
 f = file.readlines()
 grid = []
 sum = 0

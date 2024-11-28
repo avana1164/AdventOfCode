@@ -1,4 +1,4 @@
-file = open('adventfile25_2021', 'r')
+file = open('d25', 'r')
 f = file.readlines()
 cu1 = {}
 sum = 0

@@ -1,4 +1,4 @@
-file = open('adventfile11_2022', 'r')
+file = open('d11', 'r')
 f = file.readlines()
 monkeys = []
 for line in f:    

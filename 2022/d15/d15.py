@@ -1,4 +1,4 @@
-file = open('adventfile15_2022', 'r')
+file = open('d15', 'r')
 f = file.readlines()
 min_x = 0
 max_x = 0

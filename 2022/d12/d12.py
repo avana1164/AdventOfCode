@@ -1,6 +1,6 @@
 from queue import Queue 
 queue = Queue()
-file = open('adventfile12_2022')
+file = open('d12', 'r')
 f = file.readlines()
 curr_node = ()
 targ_node = ()

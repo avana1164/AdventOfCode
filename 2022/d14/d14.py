@@ -1,4 +1,4 @@
-file = open('adventfile14_2022', 'r')
+file = open('d14', 'r')
 f = file.readlines()
 filled = {}
 min_height = 0

@@ -1,5 +1,5 @@
 import json
-file = open('adventfile13_2022', 'r')
+file = open('d13', 'r')
 f = file.readlines()
 line_num = 0
 pair_num = 1

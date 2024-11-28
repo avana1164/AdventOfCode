@@ -1,4 +1,4 @@
-file = open('adventfile6_2022', 'r')
+file = open('d6', 'r')
 f = file.readlines()
 s = f[0]
 for j in range(len(s) - 13):

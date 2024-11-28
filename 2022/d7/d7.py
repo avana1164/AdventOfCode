@@ -1,4 +1,4 @@
-file = open('adventfile7_2022.txt', 'r')
+file = open('d7', 'r')
 f = file.readlines()
 directories = {}
 sum = 0

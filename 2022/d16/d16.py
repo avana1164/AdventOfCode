@@ -1,4 +1,4 @@
-file = open('adventfile16_2022', 'r')
+file = open('d16', 'r')
 f = file.readlines()
 valves = {}
 nodes = []
