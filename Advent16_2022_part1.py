@@ -37,31 +37,32 @@ def floyd_warshall(valves, nodes):
 
 dist = floyd_warshall(valves, nodes)  
 
-def part1(current, time, visited):
-    cache = {}
+cache = {}
     
-    def max_pressure(current, time, visited):
-        if (current, time, visited) in cache:
-            return cache[(current, time, visited)]
-            
-        options = []
+def max_pressure(current, time, visited):
+    if (current, time, visited) in cache:
+        return cache[(current, time, visited)]
         
-        if time <= 0:
-            return 0
-        
-        for next in nodes_of_interest:
-            distance = dist[nodes.index(current)][nodes.index(next)] + 1
-            if not (visited & (1 << nodes.index(next))) and time - distance >= 0:
-                pressure = valves[next][0]*(time - distance)
-                cache[(current, time, visited)] = pressure + max_pressure(next, time - distance, visited | (1 << nodes.index(next)))
-                options.append(cache[(current, time, visited)])
+    max_val = 0
+    
+    if time <= 0:
+        return 0
+    
+    for next in nodes_of_interest:
+        distance = dist[nodes.index(current)][nodes.index(next)] + 1
+        if not (visited & (1 << nodes.index(next))) and time - distance >= 0:
+            pressure = valves[next][0]*(time - distance)
+            max_val = max(max_val, pressure + max_pressure(next, time - distance, visited | (1 << nodes.index(next))))
+            cache[(current, time, visited)] = max_val
+    
+    return max_val 
+     
+# print(max_pressure("AA", 30, 0)) part 1
 
-        if not options:
-            return 0
-        
-        return max(options) 
-    return max_pressure(current, time, visited)
+mask = (1 << len(nodes_of_interest)) - 1
+max_val = 0
 
-
-           
-print(part1("AA", 30, 0))
+for i in range((mask + 1)//2):
+    max_val = max(max_val, max_pressure("AA", 26, i) + max_pressure("AA", 26, i^mask))
+    
+print(max_val)
